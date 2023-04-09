@@ -1,0 +1,4 @@
+= _A Pythonic Adventure_ book companion site
+
+This repository contains the source for the book companion site.
+Please feel free to open issues if you have any feedback: topics to cover, errors in the book, etc.
