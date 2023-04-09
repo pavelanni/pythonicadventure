@@ -1,4 +1,6 @@
-baseURL = 'https://pythonicadventure.com/'
+baseURL = 'https://pavelanni.github.io/pythonicadventure'
+canonifyURLs = true
+relativeURLs = true
 languageCode = 'en-us'
 title = 'A Pythonic Adventure book'
 
