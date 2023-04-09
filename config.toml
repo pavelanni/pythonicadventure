@@ -1,0 +1,11 @@
+baseURL = 'https://pythonicadventure.com/'
+languageCode = 'en-us'
+title = 'A Pythonic Adventure book'
+
+[module]
+[[module.imports]]
+path = 'github.com/McShelby/hugo-theme-relearn'
+
+[params]
+# Change default color scheme with a variant one.
+themeVariant = ["relearn-light", "relearn-dark"]
