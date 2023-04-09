@@ -7,7 +7,9 @@ chapter: true
 
 # A Pythonic Adventure
 
-This site contains additional materials for the book from Manning.
+{{< figure src="images/a-pythonic-adventure.jpg" link="https://www.manning.com/books/a-pythonic-adventure" alt="A Pythonic Adventure cover" width="80%" target="_blank" >}}
+
+This site contains additional materials for this [book](https://www.manning.com/books/a-pythonic-adventure) from Manning.
 
 [Projects]({{< ref "/projects" >}} "Project ideas")
 

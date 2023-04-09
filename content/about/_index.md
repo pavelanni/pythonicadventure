@@ -7,8 +7,10 @@ chapter = true
 
 # About
 
-Pavel Anni is a Principal Customer Engineer at SambaNova Systems.
+**Pavel Anni** is a Principal Customer Engineer at SambaNova Systems.
 Before joining this AI startup Pavel worked for Sun Microsystems, Oracle, and Red Hat.
 In his career his main role has been training people and popularizing new technologies.
 He has developed and delivered courses on programming languages, Unix and Linux operating systems,
 Kubernetes, and other topics.
+
+You can contact him by email: pavel-at-this-site-domain-name.
