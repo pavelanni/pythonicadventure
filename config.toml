@@ -11,3 +11,6 @@ path = 'github.com/McShelby/hugo-theme-relearn'
 [params]
 # Change default color scheme with a variant one.
 themeVariant = ["relearn-light", "relearn-dark"]
+
+[markup.goldmark.renderer]
+unsafe = true
