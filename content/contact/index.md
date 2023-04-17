@@ -8,7 +8,7 @@ chapter = true
 # Contact us
 
 
-<form method="post" action="https://forms.un-static.com/forms/f690819347285e8a33fd3f64b888d13329dab8be">
+<form method="post" action="https://formprocessor-jzloc7hpha-ue.a.run.app/submit">
   <div class="form-group row">
     <label for="name" class="col-4 col-form-label">Name</label>
     <div class="col-8">
