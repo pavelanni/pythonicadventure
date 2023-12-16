@@ -8,7 +8,7 @@ chapter = true
 # Contact us
 
 
-<form method="post" action="https://formprocessor-jzloc7hpha-ue.a.run.app/submit">
+<form id="feedback" method="post" action="https://formprocessor-jzloc7hpha-ue.a.run.app/submit">
   <div class="form-group row">
     <label for="name" class="col-4 col-form-label">Name</label>
     <div class="col-8">
@@ -39,7 +39,11 @@ chapter = true
   </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Send</button>
+      <button name="submit" type="submit" class="btn btn-primary"
+      class="g-recaptcha"
+        data-sitekey="6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo"
+        data-callback='onSubmit'
+        data-action='submit'>Send</button>
     </div>
   </div>
 </form>
