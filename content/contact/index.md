@@ -39,7 +39,7 @@ chapter = true
   </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="button" class="btn btn-primary">Send</button>
+      <button name="send" type="button" class="btn btn-primary">Send</button>
     </div>
   </div>
 </form>
