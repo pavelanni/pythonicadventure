@@ -12,30 +12,51 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo"></script>
 <!-- reCaptcha v3 callback -->
 <script>
-  function onSubmit(token) {
-    // Add the token to the form
+  function submitForm() {
     const form = document.getElementById("feedback");
-    const tokenInput = document.createElement("input");
-    tokenInput.type = "hidden";
-    tokenInput.name = "g-recaptcha-response";
-    tokenInput.value = token;
-    form.appendChild(tokenInput);
+    if (!form) {
+      console.error('Form not found');
+      return;
+    }
     
-    // Submit the form
-    form.submit();
+    // Check if reCAPTCHA is loaded
+    if (typeof grecaptcha === 'undefined') {
+      console.error('reCAPTCHA not loaded');
+      form.submit(); // Submit without reCAPTCHA as fallback
+      return;
+    }
+    
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo', {action: 'submit'}).then(function(token) {
+        // Remove any existing token input
+        const existingToken = form.querySelector('input[name="g-recaptcha-response"]');
+        if (existingToken) {
+          existingToken.remove();
+        }
+        
+        // Add the token to the form
+        const tokenInput = document.createElement("input");
+        tokenInput.type = "hidden";
+        tokenInput.name = "g-recaptcha-response";
+        tokenInput.value = token;
+        form.appendChild(tokenInput);
+        
+        // Submit the form
+        form.submit();
+      }).catch(function(error) {
+        console.error('reCAPTCHA error:', error);
+        form.submit(); // Submit without reCAPTCHA as fallback
+      });
+    });
   }
   
-  // Initialize reCAPTCHA when page loads
+  // Initialize when page loads
   document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.querySelector('button[name="submit"]');
     if (submitButton) {
       submitButton.addEventListener('click', function(e) {
         e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo', {action: 'submit'}).then(function(token) {
-            onSubmit(token);
-          });
-        });
+        submitForm();
       });
     }
   });

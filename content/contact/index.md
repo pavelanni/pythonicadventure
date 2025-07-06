@@ -39,10 +39,7 @@ chapter = true
   </div>
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="button" class="btn btn-primary g-recaptcha"
-        data-sitekey="6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo"
-        data-callback='onSubmit'
-        data-action='submit'>Send</button>
+      <button name="submit" type="button" class="btn btn-primary">Send</button>
     </div>
   </div>
 </form>
