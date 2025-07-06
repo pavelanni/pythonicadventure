@@ -9,13 +9,37 @@
   gtag('config', 'G-702YWLGXW8');
 </script>
 <!-- reCaptcha v3 -->
-<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo"></script>
 <!-- reCaptcha v3 callback -->
- <script>
-   function onSubmit(token) {
-     document.getElementById("feedback").submit();
-   }
- </script>
+<script>
+  function onSubmit(token) {
+    // Add the token to the form
+    const form = document.getElementById("feedback");
+    const tokenInput = document.createElement("input");
+    tokenInput.type = "hidden";
+    tokenInput.name = "g-recaptcha-response";
+    tokenInput.value = token;
+    form.appendChild(tokenInput);
+    
+    // Submit the form
+    form.submit();
+  }
+  
+  // Initialize reCAPTCHA when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    const submitButton = document.querySelector('button[name="submit"]');
+    if (submitButton) {
+      submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6Le6JzMpAAAAAPD4vWW-mnLJ9WaOcqmK8I0ixQpo', {action: 'submit'}).then(function(token) {
+            onSubmit(token);
+          });
+        });
+      });
+    }
+  });
+</script>
 
 
     <meta charset="utf-8">

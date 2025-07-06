@@ -1,6 +1,6 @@
 ---
 title: "A Pythonic Adventure"
-date: 2022-11-12T18:56:36-05:00 //
+date: 2022-11-12T18:56:36-05:00
 chapter: true
 
 ---
